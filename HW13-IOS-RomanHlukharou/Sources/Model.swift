@@ -27,78 +27,77 @@ struct Settings: Hashable {
 extension Settings {
     static var settings: [[Settings]] = [
         //Connection
-        [Settings(icon: UIImage(named: "person1")!, name: "Airplane Mode", bloc: .connection),
-         Settings(icon: UIImage(named: "person1")!, name: "Wi-Fi", bloc: .connection),
-         Settings(icon: UIImage(named: "person1")!, name: "Bluetooth", bloc: .connection),
-         Settings(icon: UIImage(named: "person1")!, name: "Mobile Data", bloc: .connection),
-         Settings(icon: UIImage(named: "person1")!, name: "Personal Hotspot", bloc: .connection),
-         Settings(icon: UIImage(named: "person1")!, name: "VPN", bloc: .connection)
+        [Settings(icon: UIImage(systemName: "airplane")!, name: "Airplane Mode", bloc: .connection),
+         Settings(icon: UIImage(systemName: "wifi")!, name: "Wi-Fi", bloc: .connection),
+         Settings(icon: UIImage(named: "bluetooth")!, name: "Bluetooth", bloc: .connection),
+         Settings(icon: UIImage(systemName: "antenna.radiowaves.left.and.right")!, name: "Mobile Data", bloc: .connection),
+         Settings(icon: UIImage(systemName: "personalhotspot")!, name: "Personal Hotspot", bloc: .connection),
+         Settings(icon: UIImage(named: "vpn")!, name: "VPN", bloc: .connection)
         ],
         //Notions
         [
-         Settings(icon: UIImage(named: "person1")!, name: "Notifications", bloc: .notions),
-         Settings(icon: UIImage(named: "person1")!, name: "Sounds & Haptics", bloc: .notions),
-         Settings(icon: UIImage(named: "person1")!, name: "Focus", bloc: .notions),
-         Settings(icon: UIImage(named: "person1")!, name: "Screen time", bloc: .notions)
+         Settings(icon: UIImage(systemName: "bell.badge.fill")!, name: "Notifications", bloc: .notions),
+         Settings(icon: UIImage(systemName: "speaker.wave.3")!, name: "Sounds & Haptics", bloc: .notions),
+         Settings(icon: UIImage(systemName: "moon.fill")!, name: "Focus", bloc: .notions),
+         Settings(icon: UIImage(systemName: "hourglass")!, name: "Screen time", bloc: .notions)
         ],
         //General
-        [Settings(icon: UIImage(named: "person1")!, name: "General", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Control Center", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Display & Brightness", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Home Screen", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Accessibility", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Wallaper", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Siri & Search", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Face ID & Passcode", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Emergency SOS", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Exposure Notifications", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Battery", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Privacy & Security", bloc: .general)
+        [Settings(icon: UIImage(systemName: "gear")!, name: "General", bloc: .general),
+         Settings(icon: UIImage(systemName: "switch.2")!, name: "Control Center", bloc: .general),
+         Settings(icon: UIImage(systemName: "textformat.size")!, name: "Display & Brightness", bloc: .general),
+         Settings(icon: UIImage(systemName: "apps.iphone")!, name: "Home Screen", bloc: .general),
+         Settings(icon: UIImage(systemName: "figure.child.circle")!, name: "Accessibility", bloc: .general),
+         Settings(icon: UIImage(named: "wallpaper")!, name: "Wallpaper", bloc: .general),
+         Settings(icon: UIImage(named: "siri")!, name: "Siri & Search", bloc: .general),
+         Settings(icon: UIImage(systemName: "faceid")!, name: "Face ID & Passcode", bloc: .general),
+         Settings(icon: UIImage(systemName: "sos")!, name: "Emergency SOS", bloc: .general),
+         Settings(icon: UIImage(named: "virus")!, name: "Exposure Notifications", bloc: .general),
+         Settings(icon: UIImage(systemName: "battery.100percent")!, name: "Battery", bloc: .general),
+         Settings(icon: UIImage(systemName: "hand.raised.fill")!, name: "Privacy & Security", bloc: .general)
         ],
         //App Store
-        [Settings(icon: UIImage(named: "person1")!, name: "App Store", bloc: .appStore),
-         Settings(icon: UIImage(named: "person1")!, name: "Wallet & Apple Pay", bloc: .appStore)
+        [Settings(icon: UIImage(named: "appstore")!, name: "App Store", bloc: .appStore),
+         Settings(icon: UIImage(named: "wallet")!, name: "Wallet & Apple Pay", bloc: .appStore)
          ],
         //IOS
-        [Settings(icon: UIImage(named: "person1")!, name: "Passwords", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Mail", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Contscts", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Calendar", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Notes", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Reminders", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Freeform", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Voice Memos", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Phone", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Messages", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "FaceTime", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Safari", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Stocks", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Weather", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Translate", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Maps", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Compass", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Measure", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Shortcuts", bloc: .general),
-         Settings(icon: UIImage(named: "person1")!, name: "Health", bloc: .general)
+        [Settings(icon: UIImage(systemName: "key.fill")!, name: "Passwords", bloc: .general),
+         Settings(icon: UIImage(systemName: "envelope.fill")!, name: "Mail", bloc: .general),
+         Settings(icon: UIImage(named: "contacts")!, name: "Contacts", bloc: .general),
+         Settings(icon: UIImage(systemName: "calendar")!, name: "Calendar", bloc: .general),
+         Settings(icon: UIImage(systemName: "note.text")!, name: "Notes", bloc: .general),
+         Settings(icon: UIImage(named: "reminders")!, name: "Reminders", bloc: .general),
+         Settings(icon: UIImage(named: "voice")!, name: "Voice Memos", bloc: .general),
+         Settings(icon: UIImage(systemName: "phone.fill")!, name: "Phone", bloc: .general),
+         Settings(icon: UIImage(systemName: "message.fill")!, name: "Messages", bloc: .general),
+         Settings(icon: UIImage(systemName: "video.fill")!, name: "FaceTime", bloc: .general),
+         Settings(icon: UIImage(systemName: "safari")!, name: "Safari", bloc: .general),
+         Settings(icon: UIImage(named: "stocks")!, name: "Stocks", bloc: .general),
+         Settings(icon: UIImage(named: "weather")!, name: "Weather", bloc: .general),
+         Settings(icon: UIImage(named: "translate")!, name: "Translate", bloc: .general),
+         Settings(icon: UIImage(named: "maps")!, name: "Maps", bloc: .general),
+         Settings(icon: UIImage(named: "compass")!, name: "Compass", bloc: .general),
+         Settings(icon: UIImage(named: "measure")!, name: "Measure", bloc: .general),
+         Settings(icon: UIImage(named: "shortcuts")!, name: "Shortcuts", bloc: .general),
+         Settings(icon: UIImage(named: "health")!, name: "Health", bloc: .general)
         ],
         //Music
-        [Settings(icon: UIImage(named: "person1")!, name: "Music", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "TV", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "Photos", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "Camera", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "Books", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "Podcasts", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "iTunes U", bloc: .music),
-         Settings(icon: UIImage(named: "person1")!, name: "Game Center", bloc: .music)
+        [Settings(icon: UIImage(named: "music")!, name: "Music", bloc: .music),
+         Settings(icon: UIImage(named: "appleTV")!, name: "TV", bloc: .music),
+         Settings(icon: UIImage(named: "photos")!, name: "Photos", bloc: .music),
+         Settings(icon: UIImage(named: "camera")!, name: "Camera", bloc: .music),
+         Settings(icon: UIImage(named: "books")!, name: "Books", bloc: .music),
+         Settings(icon: UIImage(named: "podcast")!, name: "Podcasts", bloc: .music),
+         Settings(icon: UIImage(named: "itunes")!, name: "iTunes U", bloc: .music),
+         Settings(icon: UIImage(named: "gamecenter")!, name: "Game Center", bloc: .music)
         ],
         //TV Provider
-        [Settings(icon: UIImage(named: "person1")!, name: "TV Provider", bloc: .tvProvider)],
+        [Settings(icon: UIImage(systemName: "cable.coaxial")!, name: "TV Provider", bloc: .tvProvider)],
         //Applications
-        [Settings(icon: UIImage(named: "person1")!, name: "Yandex Go", bloc: .applications),
-         Settings(icon: UIImage(named: "person1")!, name: "McDonald's", bloc: .applications),
-         Settings(icon: UIImage(named: "person1")!, name: "Instagram", bloc: .applications),
-         Settings(icon: UIImage(named: "person1")!, name: "Spotify", bloc: .applications),
-         Settings(icon: UIImage(named: "person1")!, name: "Discord", bloc: .applications),
-         Settings(icon: UIImage(named: "person1")!, name: "365Scores", bloc: .applications)]
+        [Settings(icon: UIImage(named: "yandex")!, name: "Yandex Go", bloc: .applications),
+         Settings(icon: UIImage(named: "mcdonalds")!, name: "McDonald's", bloc: .applications),
+         Settings(icon: UIImage(named: "instagram")!, name: "Instagram", bloc: .applications),
+         Settings(icon: UIImage(named: "spotify")!, name: "Spotify", bloc: .applications),
+         Settings(icon: UIImage(named: "discord")!, name: "Discord", bloc: .applications),
+         Settings(icon: UIImage(named: "365scores")!, name: "365Scores", bloc: .applications)]
     ]
 }
