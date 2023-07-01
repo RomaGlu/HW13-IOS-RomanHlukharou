@@ -46,13 +46,13 @@ extension Settings {
          Settings(icon: UIImage(systemName: "switch.2")!, name: "Control Center", bloc: .general),
          Settings(icon: UIImage(systemName: "textformat.size")!, name: "Display & Brightness", bloc: .general),
          Settings(icon: UIImage(systemName: "apps.iphone")!, name: "Home Screen", bloc: .general),
-         Settings(icon: UIImage(systemName: "figure.child.circle")!, name: "Accessibility", bloc: .general),
+         Settings(icon: UIImage(systemName: "figure.walk.circle")!, name: "Accessibility", bloc: .general),
          Settings(icon: UIImage(named: "wallpaper")!, name: "Wallpaper", bloc: .general),
          Settings(icon: UIImage(named: "siri")!, name: "Siri & Search", bloc: .general),
          Settings(icon: UIImage(systemName: "faceid")!, name: "Face ID & Passcode", bloc: .general),
          Settings(icon: UIImage(systemName: "sos")!, name: "Emergency SOS", bloc: .general),
          Settings(icon: UIImage(named: "virus")!, name: "Exposure Notifications", bloc: .general),
-         Settings(icon: UIImage(systemName: "battery.100percent")!, name: "Battery", bloc: .general),
+         Settings(icon: UIImage(systemName: "minus.plus.batteryblock")!, name: "Battery", bloc: .general),
          Settings(icon: UIImage(systemName: "hand.raised.fill")!, name: "Privacy & Security", bloc: .general)
         ],
         //App Store
@@ -91,7 +91,7 @@ extension Settings {
          Settings(icon: UIImage(named: "gamecenter")!, name: "Game Center", bloc: .music)
         ],
         //TV Provider
-        [Settings(icon: UIImage(systemName: "cable.coaxial")!, name: "TV Provider", bloc: .tvProvider)],
+        [Settings(icon: UIImage(systemName: "cable.connector.horizontal")!, name: "TV Provider", bloc: .tvProvider)],
         //Applications
         [Settings(icon: UIImage(named: "yandex")!, name: "Yandex Go", bloc: .applications),
          Settings(icon: UIImage(named: "mcdonalds")!, name: "McDonald's", bloc: .applications),

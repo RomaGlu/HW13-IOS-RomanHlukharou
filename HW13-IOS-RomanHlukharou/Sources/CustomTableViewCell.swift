@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
+    
+    var setting: Settings? {
+        didSet {
+            iconImage.image = setting?.icon
+            settingLabel.text = setting?.name
+        }
+    }
     
     // MARK: - Outlets
     
@@ -17,13 +25,13 @@ class CustomTableViewCell: UITableViewCell {
         let iconImage = UIImageView()
         let image = UIImage()
         iconImage.clipsToBounds = true
-        iconImage.layer.cornerRadius = 35
+        iconImage.layer.cornerRadius = 2
         return iconImage
     }()
     
     private lazy var settingLabel: UILabel = {
        let settingLabel = UILabel()
-        settingLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        settingLabel.font = UIFont.systemFont(ofSize: 15)
         settingLabel.textColor = .black
         return settingLabel
     }()
@@ -49,6 +57,19 @@ class CustomTableViewCell: UITableViewCell {
     
     func setupLayout() {
         
+        iconImage.snp.makeConstraints { make in
+            make.left.equalTo(contentView.snp.left).offset(8)
+            make.top.equalTo(contentView.snp.top).offset(8)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-8)
+            make.width.equalTo(25)
+        }
+        
+        settingLabel.snp.makeConstraints { make in
+            make.left.equalTo(iconImage.snp.right).offset(15)
+            make.top.equalTo(contentView.snp.top).offset(5)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-5)
+            make.width.equalTo(250)
+        }
     }
     
     // MARK: - Actions
