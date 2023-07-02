@@ -39,6 +39,8 @@ class CustomTableViewCell: UITableViewCell {
         let settingPlaceholderLabel = UILabel()
         settingPlaceholderLabel.backgroundColor = .systemBackground
         settingPlaceholderLabel.textColor = .lightGray
+        settingPlaceholderLabel.numberOfLines = 1
+        settingPlaceholderLabel.textAlignment = .left
         return settingPlaceholderLabel
     }()
     
@@ -92,16 +94,15 @@ class CustomTableViewCell: UITableViewCell {
         
         settingLabel.snp.makeConstraints { make in
             make.left.equalTo(iconImage.snp.right).offset(16)
-            make.top.equalTo(contentView.snp.top).offset(3)
+            make.top.equalTo(contentView.snp.top).offset(5)
             make.bottom.equalTo(contentView.snp.bottom).offset(-3)
             make.width.equalTo(200)
         }
         
         settingPlaceholderLabel.snp.makeConstraints { make in
-            make.right.equalTo(contentView.snp.right).offset(-1)
-            make.top.equalTo(contentView.snp.top).offset(3)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-3)
-            make.width.equalTo(150)
+            make.right.equalTo(contentView.snp.right).offset(-10)
+            make.top.equalTo(contentView.snp.top).offset(11)
+            make.width.equalTo(113)
         }
         
         notionImage.snp.makeConstraints { make in

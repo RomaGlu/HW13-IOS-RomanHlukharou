@@ -48,7 +48,6 @@ class SettingsViewController: UIViewController {
             make.top.left.bottom.right.equalTo(view)
         }
     }
-    // MARK: - Actions
 }
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -78,12 +77,79 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         if cell?.settingLabel.text == "Wi-Fi" {
             cell?.settingPlaceholderLabel.text = "Not connected"
+            cell?.settingPlaceholderLabel.isHidden = false
+            cell?.iconImage.backgroundColor = .systemBlue
         } else if cell?.settingLabel.text == "Bluetooth" {
+            cell?.settingPlaceholderLabel.isHidden = false
             cell?.settingPlaceholderLabel.text = "Not connected"
             cell?.iconImage.backgroundColor = .systemBlue
         } else if cell?.settingLabel.text == "General" {
             cell?.notionImage.isHidden = false
             cell?.notionImage.image = UIImage(systemName: "1.circle.fill")
+            cell?.iconImage.backgroundColor = .white
+        }  else if cell?.settingLabel.text == "Mobile Data" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Notifications" {
+            cell?.iconImage.backgroundColor = .systemRed
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Sounds & Haptics" {
+            cell?.iconImage.backgroundColor = .systemPink
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Display & Brightness" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Home Screen" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Accessibility" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Face ID & Passcode" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Emergency SOS" {
+            cell?.iconImage.backgroundColor = .systemRed
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Battery" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Privacy & Security" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Passwords" {
+            cell?.iconImage.backgroundColor = .systemGray
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Mail" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Calendar" {
+            cell?.iconImage.backgroundColor = .systemOrange
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Notes" {
+            cell?.iconImage.backgroundColor = .systemYellow
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Phone" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Messages" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "FaceTime" {
+            cell?.iconImage.backgroundColor = .systemGreen
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Safari" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "TV Provider" {
+            cell?.iconImage.backgroundColor = .black
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Wallpaper" {
+            cell?.iconImage.backgroundColor = .systemBlue
+            cell?.iconImage.tintColor = .white
+        } else if cell?.settingLabel.text == "Exposure Notifications" {
+            cell?.iconImage.backgroundColor = .white
+            cell?.iconImage.tintColor = .white
         }
        
         if cell?.settingLabel.text == "Airplane Mode" {
@@ -103,8 +169,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell?.iconImage.backgroundColor = .systemBlue
         } else {
             cell?.accessoryType = .disclosureIndicator
-            
-           
         }
         return cell ?? UITableViewCell()
     }
