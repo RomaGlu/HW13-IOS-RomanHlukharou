@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
         let settingImage = UIImageView()
         let image = UIImage()
         settingImage.clipsToBounds = true
-        settingImage.layer.cornerRadius = 150
+        settingImage.layer.cornerRadius = 125
         settingImage.tintColor = .black
         settingImage.image = image
         return settingImage
@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
     
     func setupLayout() {
         settingImage.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(150)
+            make.top.equalTo(view.snp.top).offset(130)
             make.left.equalTo(view.snp.left).offset(30)
             make.right.equalTo(view.snp.right).offset(-30)
             make.height.equalTo(300)
