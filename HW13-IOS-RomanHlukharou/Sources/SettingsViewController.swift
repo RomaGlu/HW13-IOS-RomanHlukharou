@@ -11,7 +11,7 @@ import SnapKit
 class SettingsViewController: UIViewController {
     
     // MARK: - Properties
-   private var settings: [[Settings]]?
+    private var settings: [[Settings]]?
     
     // MARK: - Outlets
     
@@ -22,12 +22,6 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
-    
-    private lazy var airplaneSwitch: UISwitch = {
-        let airplaneSwitch = UISwitch()
-        return airplaneSwitch
-    }()
-    
     
     // MARK: - Lyfecycle
     
@@ -69,20 +63,32 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         return settings?[section].count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = DetailViewController()
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewController.setting = settings?[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
         cell?.setting = settings?[indexPath.section][indexPath.row]
-        cell?.accessoryType = .disclosureIndicator
-        let switchView = UISwitch(frame: .zero)
-        switchView.setOn(false, animated: true)
-        switchView.tag = indexPath.first ?? 1
-        switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
-        cell?.accessoryView = switchView
+        
+        if cell?.settingLabel.text == "Airplane Mode" {
+            let switchView = UISwitch(frame: .zero)
+            switchView.setOn(false, animated: true)
+            switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
+            cell?.accessoryView = switchView
+        } else if cell?.settingLabel.text == "VPN" {
+            let switchView = UISwitch(frame: .zero)
+            switchView.setOn(false, animated: true)
+            switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
+            cell?.accessoryView = switchView
+        } else {
+            cell?.accessoryType = .disclosureIndicator
+        }
         return cell ?? UITableViewCell()
     }
     
-    @objc func switchDidChange(_ sender: UISwitch) {
-        
-    }
-    
+    @objc func switchDidChange(_ sender: UISwitch) {}
 }

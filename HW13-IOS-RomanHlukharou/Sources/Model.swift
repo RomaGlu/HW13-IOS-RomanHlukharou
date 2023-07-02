@@ -26,24 +26,27 @@ struct Settings: Hashable {
 
 extension Settings {
     static var settings: [[Settings]] = [
+        
         //Connection
-        [Settings(icon: UIImage(systemName: "airplane")!, name: "Airplane Mode", bloc: .connection),
+        [Settings(icon: UIImage(named: "airplane")!, name: "Airplane Mode", bloc: .connection),
          Settings(icon: UIImage(systemName: "wifi")!, name: "Wi-Fi", bloc: .connection),
          Settings(icon: UIImage(named: "bluetooth")!, name: "Bluetooth", bloc: .connection),
          Settings(icon: UIImage(systemName: "antenna.radiowaves.left.and.right")!, name: "Mobile Data", bloc: .connection),
-         Settings(icon: UIImage(systemName: "personalhotspot")!, name: "Personal Hotspot", bloc: .connection),
+         Settings(icon: UIImage(named: "hotspot")!, name: "Personal Hotspot", bloc: .connection),
          Settings(icon: UIImage(named: "vpn")!, name: "VPN", bloc: .connection)
         ],
+        
         //Notions
         [
-         Settings(icon: UIImage(systemName: "bell.badge.fill")!, name: "Notifications", bloc: .notions),
-         Settings(icon: UIImage(systemName: "speaker.wave.3")!, name: "Sounds & Haptics", bloc: .notions),
-         Settings(icon: UIImage(systemName: "moon.fill")!, name: "Focus", bloc: .notions),
-         Settings(icon: UIImage(systemName: "hourglass")!, name: "Screen time", bloc: .notions)
+            Settings(icon: UIImage(systemName: "bell.badge.fill")!, name: "Notifications", bloc: .notions),
+            Settings(icon: UIImage(systemName: "speaker.wave.3")!, name: "Sounds & Haptics", bloc: .notions),
+            Settings(icon: UIImage(named: "focus")!, name: "Focus", bloc: .notions),
+            Settings(icon: UIImage(named: "screentime")!, name: "Screen time", bloc: .notions)
         ],
+        
         //General
-        [Settings(icon: UIImage(systemName: "gear")!, name: "General", bloc: .general),
-         Settings(icon: UIImage(systemName: "switch.2")!, name: "Control Center", bloc: .general),
+        [Settings(icon: UIImage(named: "general")!, name: "General", bloc: .general),
+         Settings(icon: UIImage(named: "control")!, name: "Control Center", bloc: .general),
          Settings(icon: UIImage(systemName: "textformat.size")!, name: "Display & Brightness", bloc: .general),
          Settings(icon: UIImage(systemName: "apps.iphone")!, name: "Home Screen", bloc: .general),
          Settings(icon: UIImage(systemName: "figure.walk.circle")!, name: "Accessibility", bloc: .general),
@@ -55,11 +58,13 @@ extension Settings {
          Settings(icon: UIImage(systemName: "minus.plus.batteryblock")!, name: "Battery", bloc: .general),
          Settings(icon: UIImage(systemName: "hand.raised.fill")!, name: "Privacy & Security", bloc: .general)
         ],
+        
         //App Store
         [Settings(icon: UIImage(named: "appstore")!, name: "App Store", bloc: .appStore),
          Settings(icon: UIImage(named: "wallet")!, name: "Wallet & Apple Pay", bloc: .appStore)
-         ],
-        //IOS
+        ],
+        
+        //Passwords
         [Settings(icon: UIImage(systemName: "key.fill")!, name: "Passwords", bloc: .general),
          Settings(icon: UIImage(systemName: "envelope.fill")!, name: "Mail", bloc: .general),
          Settings(icon: UIImage(named: "contacts")!, name: "Contacts", bloc: .general),
@@ -80,6 +85,7 @@ extension Settings {
          Settings(icon: UIImage(named: "shortcuts")!, name: "Shortcuts", bloc: .general),
          Settings(icon: UIImage(named: "health")!, name: "Health", bloc: .general)
         ],
+        
         //Music
         [Settings(icon: UIImage(named: "music")!, name: "Music", bloc: .music),
          Settings(icon: UIImage(named: "appleTV")!, name: "TV", bloc: .music),
@@ -90,6 +96,7 @@ extension Settings {
          Settings(icon: UIImage(named: "itunes")!, name: "iTunes U", bloc: .music),
          Settings(icon: UIImage(named: "gamecenter")!, name: "Game Center", bloc: .music)
         ],
+        
         //TV Provider
         [Settings(icon: UIImage(systemName: "cable.connector.horizontal")!, name: "TV Provider", bloc: .tvProvider)],
         //Applications

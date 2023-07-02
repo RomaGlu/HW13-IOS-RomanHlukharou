@@ -15,6 +15,7 @@
 		E056AFF82A4F38F900CA8234 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E056AFF72A4F38F900CA8234 /* CustomTableViewCell.swift */; };
 		E056AFFB2A4F3ABC00CA8234 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E056AFFA2A4F3ABC00CA8234 /* SnapKit */; };
 		E0ACC9492A4F3C4B009E1725 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */; };
+		E0ACC94D2A519870009E1725 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ACC94C2A519870009E1725 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E056AFF52A4F13C100CA8234 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E056AFF72A4F38F900CA8234 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E0ACC94C2A519870009E1725 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */,
 				E056AFF72A4F38F900CA8234 /* CustomTableViewCell.swift */,
 				E056AFF52A4F13C100CA8234 /* Model.swift */,
+				E0ACC94C2A519870009E1725 /* DetailViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				E056AFF82A4F38F900CA8234 /* CustomTableViewCell.swift in Sources */,
 				E056AFDF2A4F11D400CA8234 /* AppDelegate.swift in Sources */,
 				E056AFE12A4F11D400CA8234 /* SceneDelegate.swift in Sources */,
+				E0ACC94D2A519870009E1725 /* DetailViewController.swift in Sources */,
 				E056AFF62A4F13C100CA8234 /* Model.swift in Sources */,
 				E0ACC9492A4F3C4B009E1725 /* SettingsViewController.swift in Sources */,
 			);

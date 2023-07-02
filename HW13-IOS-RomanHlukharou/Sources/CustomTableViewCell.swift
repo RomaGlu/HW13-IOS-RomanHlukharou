@@ -29,13 +29,13 @@ class CustomTableViewCell: UITableViewCell {
         return iconImage
     }()
     
-    private lazy var settingLabel: UILabel = {
-       let settingLabel = UILabel()
+    var settingLabel: UILabel = {
+        let settingLabel = UILabel()
         settingLabel.font = UIFont.systemFont(ofSize: 15)
         settingLabel.textColor = .black
         return settingLabel
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .white
@@ -50,6 +50,11 @@ class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Layout
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryView = .none
+    }
+    
     func setupHierarchy() {
         contentView.addSubview(iconImage)
         contentView.addSubview(settingLabel)
@@ -58,19 +63,17 @@ class CustomTableViewCell: UITableViewCell {
     func setupLayout() {
         
         iconImage.snp.makeConstraints { make in
-            make.left.equalTo(contentView.snp.left).offset(8)
+            make.left.equalTo(contentView.snp.left).offset(6)
             make.top.equalTo(contentView.snp.top).offset(8)
             make.bottom.equalTo(contentView.snp.bottom).offset(-8)
-            make.width.equalTo(25)
+            make.width.equalTo(28)
         }
         
         settingLabel.snp.makeConstraints { make in
-            make.left.equalTo(iconImage.snp.right).offset(15)
-            make.top.equalTo(contentView.snp.top).offset(5)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-5)
-            make.width.equalTo(250)
+            make.left.equalTo(iconImage.snp.right).offset(16)
+            make.top.equalTo(contentView.snp.top).offset(3)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-3)
+            make.width.equalTo(200)
         }
     }
-    
-    // MARK: - Actions
 }
