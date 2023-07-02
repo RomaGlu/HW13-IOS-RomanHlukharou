@@ -36,12 +36,32 @@ class CustomTableViewCell: UITableViewCell {
         return settingLabel
     }()
     
+    var settingPlaceholderLabel: UILabel = {
+        let settingPlaceholderLabel = UILabel()
+        settingPlaceholderLabel.backgroundColor = .white
+        settingPlaceholderLabel.textColor = .lightGray
+        return settingPlaceholderLabel
+    }()
+    
+    var notionImage: UIImageView = {
+        let notionImage = UIImageView()
+        let image = UIImage()
+//        image.withTintColor(.white)
+        notionImage.clipsToBounds = true
+        notionImage.layer.cornerRadius = 17
+        
+        notionImage.image = image
+        notionImage.tintColor = .systemRed
+        notionImage.backgroundColor = .white
+        notionImage.isHidden = true
+        return notionImage
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .white
         setupHierarchy()
         setupLayout()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -53,11 +73,15 @@ class CustomTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.accessoryView = .none
+        self.notionImage.isHidden = true
+        self.settingPlaceholderLabel.isHidden = true
     }
     
     func setupHierarchy() {
         contentView.addSubview(iconImage)
         contentView.addSubview(settingLabel)
+        contentView.addSubview(settingPlaceholderLabel)
+        contentView.addSubview(notionImage)
     }
     
     func setupLayout() {
@@ -74,6 +98,20 @@ class CustomTableViewCell: UITableViewCell {
             make.top.equalTo(contentView.snp.top).offset(3)
             make.bottom.equalTo(contentView.snp.bottom).offset(-3)
             make.width.equalTo(200)
+        }
+        
+        settingPlaceholderLabel.snp.makeConstraints { make in
+            make.right.equalTo(contentView.snp.right).offset(-1)
+            make.top.equalTo(contentView.snp.top).offset(3)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-3)
+            make.width.equalTo(150)
+        }
+        
+        notionImage.snp.makeConstraints { make in
+            make.right.equalTo(contentView.snp.right).offset(-1)
+            make.top.equalTo(contentView.snp.top).offset(5)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-5)
+            make.width.equalTo(27)
         }
     }
 }

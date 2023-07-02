@@ -78,6 +78,15 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.setting = settings?[indexPath.section][indexPath.row]
         cell?.backgroundColor = .white
         
+        if cell?.settingLabel.text == "Wi-Fi" {
+            cell?.settingPlaceholderLabel.text = "Not connected"
+        } else if cell?.settingLabel.text == "Bluetooth" {
+            cell?.settingPlaceholderLabel.text = "Not connected"
+        } else if cell?.settingLabel.text == "General" {
+            cell?.notionImage.isHidden = false
+            cell?.notionImage.image = UIImage(systemName: "1.circle.fill")
+        }
+       
         if cell?.settingLabel.text == "Airplane Mode" {
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(false, animated: true)
@@ -92,9 +101,9 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             cell?.accessoryView = switchView
         } else {
             cell?.accessoryType = .disclosureIndicator
+           
         }
         return cell ?? UITableViewCell()
-        
     }
     
     @objc func switchDidChange(_ sender: UISwitch) {}
