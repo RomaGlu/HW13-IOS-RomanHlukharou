@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -31,6 +32,8 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = .white
         title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.backgroundColor = .white
+        
         setupHierarchy()
         setupLayout()
     }
@@ -73,21 +76,25 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
         cell?.setting = settings?[indexPath.section][indexPath.row]
+        cell?.backgroundColor = .white
         
         if cell?.settingLabel.text == "Airplane Mode" {
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(false, animated: true)
             switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
+            switchView.backgroundColor = .white
             cell?.accessoryView = switchView
         } else if cell?.settingLabel.text == "VPN" {
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(false, animated: true)
+            switchView.backgroundColor = .white
             switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
             cell?.accessoryView = switchView
         } else {
             cell?.accessoryType = .disclosureIndicator
         }
         return cell ?? UITableViewCell()
+        
     }
     
     @objc func switchDidChange(_ sender: UISwitch) {}

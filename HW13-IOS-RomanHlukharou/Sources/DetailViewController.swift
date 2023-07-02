@@ -53,6 +53,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.navigationBar.backgroundColor = .white
         setupHierarchy()
         setupLayout()
     }
@@ -82,8 +83,8 @@ class DetailViewController: UIViewController {
         
         settingBlocLabel.snp.makeConstraints { make in
             make.top.equalTo(settingNameLabel.snp.bottom).offset(8)
-            make.left.equalTo(view.snp.left).offset(60)
-            make.right.equalTo(view.snp.right).offset(-60)
+            make.left.equalTo(view.snp.left).offset(20)
+            make.right.equalTo(view.snp.right).offset(-20)
             make.height.equalTo(20)
         }
     }
@@ -91,7 +92,7 @@ class DetailViewController: UIViewController {
     private func fillSettings() {
         settingImage.image = setting?.icon
         settingNameLabel.text = setting?.name
-        settingBlocLabel.text = "Эта настройка находится в блоке \(setting?.bloc.rawValue ?? "")."
+        settingBlocLabel.text = "\(setting?.bloc.rawValue ?? "")"
     }
 }
 
