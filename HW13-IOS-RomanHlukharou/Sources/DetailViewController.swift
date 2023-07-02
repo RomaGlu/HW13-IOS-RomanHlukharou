@@ -27,7 +27,6 @@ class DetailViewController: UIViewController {
         let image = UIImage()
         settingImage.clipsToBounds = true
         settingImage.layer.cornerRadius = 125
-        settingImage.tintColor = .black
         settingImage.image = image
         return settingImage
     }()
@@ -35,7 +34,6 @@ class DetailViewController: UIViewController {
     private lazy var settingNameLabel: UILabel = {
         let settingNameLabel = UILabel()
         settingNameLabel.font = UIFont.boldSystemFont(ofSize: 25)
-        settingNameLabel.textColor = .black
         settingNameLabel.textAlignment = .center
         return settingNameLabel
     }()
@@ -52,8 +50,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        navigationController?.navigationBar.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupHierarchy()
         setupLayout()
     }

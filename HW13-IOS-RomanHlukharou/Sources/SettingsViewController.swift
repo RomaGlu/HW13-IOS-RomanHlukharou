@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .systemBackground
         return tableView
     }()
     
@@ -29,11 +29,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settings = Settings.settings
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = .white
-        
         setupHierarchy()
         setupLayout()
     }
@@ -76,12 +74,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
         cell?.setting = settings?[indexPath.section][indexPath.row]
-        cell?.backgroundColor = .white
+        cell?.backgroundColor = .systemBackground
         
         if cell?.settingLabel.text == "Wi-Fi" {
             cell?.settingPlaceholderLabel.text = "Not connected"
         } else if cell?.settingLabel.text == "Bluetooth" {
             cell?.settingPlaceholderLabel.text = "Not connected"
+            cell?.iconImage.backgroundColor = .systemBlue
         } else if cell?.settingLabel.text == "General" {
             cell?.notionImage.isHidden = false
             cell?.notionImage.image = UIImage(systemName: "1.circle.fill")
@@ -91,16 +90,20 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(false, animated: true)
             switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
-            switchView.backgroundColor = .white
+            switchView.backgroundColor = .systemBackground
             cell?.accessoryView = switchView
         } else if cell?.settingLabel.text == "VPN" {
+            cell?.iconImage.backgroundColor = .systemBlue
             let switchView = UISwitch(frame: .zero)
             switchView.setOn(false, animated: true)
-            switchView.backgroundColor = .white
+            switchView.backgroundColor = .systemBackground
             switchView.addTarget(self, action: #selector(self.switchDidChange(_:)), for: .valueChanged)
             cell?.accessoryView = switchView
+        } else if cell?.settingLabel.text == "Wallpaper" {
+            cell?.iconImage.backgroundColor = .systemBlue
         } else {
             cell?.accessoryType = .disclosureIndicator
+            
            
         }
         return cell ?? UITableViewCell()

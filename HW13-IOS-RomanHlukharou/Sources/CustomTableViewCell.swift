@@ -21,24 +21,23 @@ class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    private lazy var iconImage: UIImageView = {
+    var iconImage: UIImageView = {
         let iconImage = UIImageView()
         let image = UIImage()
         iconImage.clipsToBounds = true
-        iconImage.layer.cornerRadius = 2
+        iconImage.layer.cornerRadius = 5
         return iconImage
     }()
     
     var settingLabel: UILabel = {
         let settingLabel = UILabel()
         settingLabel.font = UIFont.systemFont(ofSize: 15)
-        settingLabel.textColor = .black
         return settingLabel
     }()
     
     var settingPlaceholderLabel: UILabel = {
         let settingPlaceholderLabel = UILabel()
-        settingPlaceholderLabel.backgroundColor = .white
+        settingPlaceholderLabel.backgroundColor = .systemBackground
         settingPlaceholderLabel.textColor = .lightGray
         return settingPlaceholderLabel
     }()
@@ -46,20 +45,18 @@ class CustomTableViewCell: UITableViewCell {
     var notionImage: UIImageView = {
         let notionImage = UIImageView()
         let image = UIImage()
-//        image.withTintColor(.white)
         notionImage.clipsToBounds = true
         notionImage.layer.cornerRadius = 17
-        
         notionImage.image = image
         notionImage.tintColor = .systemRed
-        notionImage.backgroundColor = .white
+        notionImage.backgroundColor = .systemBackground
         notionImage.isHidden = true
         return notionImage
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .systemBackground
         setupHierarchy()
         setupLayout()
     }
