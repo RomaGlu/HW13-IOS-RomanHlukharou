@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "imgbin-spotify-mobile-app-computer-icons-app-store-music-free-icon-spotify-spotify-logo-fzfn2ZupSeSZSCGZ93U4eMACV.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
