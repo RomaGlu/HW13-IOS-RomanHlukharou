@@ -26,6 +26,7 @@ class CustomTableViewCell: UITableViewCell {
         let image = UIImage()
         iconImage.clipsToBounds = true
         iconImage.layer.cornerRadius = 5
+        iconImage.contentMode = .scaleAspectFit
         return iconImage
     }()
     
@@ -50,6 +51,7 @@ class CustomTableViewCell: UITableViewCell {
         notionImage.clipsToBounds = true
         notionImage.layer.cornerRadius = 17
         notionImage.image = image
+        notionImage.contentMode = .scaleAspectFit
         notionImage.tintColor = .systemRed
         notionImage.backgroundColor = .systemBackground
         notionImage.isHidden = true
