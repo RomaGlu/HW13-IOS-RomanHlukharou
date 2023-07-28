@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "purepng.com-compass-icon-ios-7symbolsiconsapple-iosiosios-7-iconsios-7-721522596523wd7pe.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
