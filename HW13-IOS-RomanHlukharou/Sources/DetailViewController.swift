@@ -8,88 +8,60 @@
 import UIKit
 import SnapKit
 
+protocol DataTransferDelegate: AnyObject {
+    func didSelectData(_ data: Settings)
+}
+
 class DetailViewController: UIViewController {
     
-    //    MARK: - Proprties
+    // MARK: - Proprties
     
     var setting: Settings? {
         didSet {
-            settingImage.image = setting?.icon
-            settingNameLabel.text = setting?.name
-            settingBlocLabel.text = setting?.bloc.rawValue
+            detailView.settingNameLabel.text = setting?.name
         }
     }
     
-    // MARK: - Outlets
+    private var settings: [[Settings]]?
+    let detailView = DetailView()
+    weak var delegate: DataTransferDelegate?
     
-    private lazy var settingImage: UIImageView = {
-        let settingImage = UIImageView()
-        let image = UIImage()
-        settingImage.clipsToBounds = true
-        settingImage.layer.cornerRadius = 125
-        settingImage.image = image
-        return settingImage
-    }()
     
-    private lazy var settingNameLabel: UILabel = {
-        let settingNameLabel = UILabel()
-        settingNameLabel.font = UIFont.boldSystemFont(ofSize: 25)
-        settingNameLabel.textAlignment = .center
-        return settingNameLabel
-    }()
-    
-    private lazy var settingBlocLabel: UILabel = {
-        let settingBlocLabel = UILabel()
-        settingBlocLabel.textColor = .darkGray
-        settingBlocLabel.font = UIFont.systemFont(ofSize: 14)
-        settingBlocLabel.textAlignment = .center
-        return settingBlocLabel
-    }()
     
     // MARK: - Lyfecycle
     
+    override func loadView() {
+        super.loadView()
+        view = detailView
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        setupHierarchy()
-        setupLayout()
+        title = "Detail description"
+        settings = SettingsModel().createModel()
     }
     
-    //MARK: - Layouts
+    //MARK: - Configuration
     
-    func setupHierarchy() {
-        view.addSubview(settingImage)
-        view.addSubview(settingNameLabel)
-        view.addSubview(settingBlocLabel)
-    }
-    
-    func setupLayout() {
-        settingImage.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(130)
-            make.left.equalTo(view.snp.left).offset(30)
-            make.right.equalTo(view.snp.right).offset(-30)
-            make.height.equalTo(300)
+    func configureView(with model: Settings) {
+        detailView.settingNameLabel.text = model.name
+        
+        if UIImage(named: model.icon) != nil {
+            detailView.settingImage.image = UIImage(named: model.icon)
+        } else {
+            detailView.settingImage.image = UIImage(systemName: model.icon)
         }
         
-        settingNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(settingImage.snp.bottom).offset(20)
-            make.left.equalTo(view.snp.left).offset(60)
-            make.right.equalTo(view.snp.right).offset(-60)
-            make.height.equalTo(30)
-        }
-        
-        settingBlocLabel.snp.makeConstraints { make in
-            make.top.equalTo(settingNameLabel.snp.bottom).offset(8)
-            make.left.equalTo(view.snp.left).offset(20)
-            make.right.equalTo(view.snp.right).offset(-20)
-            make.height.equalTo(20)
-        }
-    }
-    
-    private func fillSettings() {
-        settingImage.image = setting?.icon
-        settingNameLabel.text = setting?.name
-        settingBlocLabel.text = "\(setting?.bloc.rawValue ?? "")"
+        detailView.settingBlocLabel.text = model.bloc.rawValue
     }
 }
 
+extension DetailViewController: DataTransferDelegate {
+    
+    func didSelectData(_ data: Settings) {
+        
+        delegate?.didSelectData(data)
+        
+    }
+}

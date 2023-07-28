@@ -16,6 +16,8 @@
 		E056AFFB2A4F3ABC00CA8234 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E056AFFA2A4F3ABC00CA8234 /* SnapKit */; };
 		E0ACC9492A4F3C4B009E1725 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */; };
 		E0ACC94D2A519870009E1725 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ACC94C2A519870009E1725 /* DetailViewController.swift */; };
+		E0D0F2792A6EF3B9008CB9D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D0F2782A6EF3B9008CB9D3 /* SettingsView.swift */; };
+		E0D0F27B2A718171008CB9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D0F27A2A718171008CB9D3 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		E056AFF72A4F38F900CA8234 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E0ACC94C2A519870009E1725 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E0D0F2782A6EF3B9008CB9D3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E0D0F27A2A718171008CB9D3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +78,10 @@
 				E056AFF32A4F12BB00CA8234 /* App */,
 				E0ACC9482A4F3C4B009E1725 /* SettingsViewController.swift */,
 				E056AFF72A4F38F900CA8234 /* CustomTableViewCell.swift */,
+				E0D0F2782A6EF3B9008CB9D3 /* SettingsView.swift */,
 				E056AFF52A4F13C100CA8234 /* Model.swift */,
 				E0ACC94C2A519870009E1725 /* DetailViewController.swift */,
+				E0D0F27A2A718171008CB9D3 /* DetailView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D0F2792A6EF3B9008CB9D3 /* SettingsView.swift in Sources */,
+				E0D0F27B2A718171008CB9D3 /* DetailView.swift in Sources */,
 				E056AFF82A4F38F900CA8234 /* CustomTableViewCell.swift in Sources */,
 				E056AFDF2A4F11D400CA8234 /* AppDelegate.swift in Sources */,
 				E056AFE12A4F11D400CA8234 /* SceneDelegate.swift in Sources */,
